@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
+    volumes:
+      - .:/dmm_intern
+    ports:
+      - "3000:3000"
